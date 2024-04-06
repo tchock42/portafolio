@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jacob Gómez Carrillo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="build/css/app.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin="">
+    </script>
+    
+
+</head>
+<body class="dos-columnas">
+    <div class="menu-mobile">
+        <picture class="avatar">
+            <source srcset="build/img/avatar-2092113_640.avif" type="image/avif">
+            <source srcset="build/img/avatar-2092113_640.webp" type="image/webp">
+            <img src="build/img/avatar-2092113_640.png" alt="avatar">
+        </picture>
+        <img class="icono-mobile" src="build/img/barras.svg" alt="icono menu responsive">
+    </div>
+
+    <div class="menu">
+        <div class="contenedor">
+            <picture class="avatar">
+                <source srcset="build/img/avatar-2092113_640.avif">
+                <img src="build/img/avatar-2092113_640.png" alt="avatar">
+            </picture>
+            <h1>Jacob Gómez Carrillo</h1>
+            <nav class="navegacion-principal">
+                <a href="/index.html">About</a>
+                <a href="/projects.html">Projects</a>
+                <a href="/contact.html">Contact</a>
+            </nav>
+            <div class="socials">
+                <picture class="socials-icon">
+                    <source srcset="build/img/facebook.avif" type="image/avif">
+                    <source srcset="build/img/facebook.webp" type="image/webp">
+                    <img src="build/img/facebook.png" alt="icono facebook">
+                </picture>
+                <picture class="socials-icon">
+                    <source srcset="build/img/github.avif" type="image/avif">
+                    <source srcset="build/img/github.webp" type="image/webp">
+                    <img src="build/img/github.png" alt="icono github">
+                </picture>
+                <picture class="socials-icon">
+                    <source srcset="build/img/linkedin.avif" type="image/avif">
+                    <source srcset="build/img/linkedin.webp" type="image/webp">
+                    <img src="build/img/linkedin.png" alt="icono linkedin">
+                </picture>
+            </div>
+        </div>
+    </div>
+
+    <main class="contenido contact">
+            <div class="contact-heading">
+                <h3>- Let's connect</h3>
+                <h1>Contact me</h1>
+            
+                <p class="about-me">I am currently available to begin new projects, that means you can contact me and we can build beautiful and exciting sites you want. Feel free to send me a message any time.</p>
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/jacob-gomez-carrillo/" target="_blank"><button class="contact-button-linkedin">LinkedIn</button></a>
+                    <a href="https://github.com/tchock42" target="_blank"><button class="contact-button-github">GitHub</button></a>
+                    <a href="https://wa.me/525565250747" target="_blank"><button class="contact-button-whatsapp">WhatsApp</button></a>
+                </div>
+                <div class="contact-email">
+                    <p class><span></span>jgc.weird@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="formulario">
+                <form action="">
+                    <fieldset>
+
+                        <!-- <label for="nombre">Name:</label> -->
+                        <input type="text" id="nombre" name="nombre" placeholder="Your Name">
+
+                        <!-- <label for="email">E-mail:</label> -->
+                        <input type="email" id="email" name="email" placeholder="E-mail">
+
+                        <textarea name="description" id="description" cols="30" rows="10" placeholder="Description"></textarea>
+                        <input type="submit" value="send email" class="contact-boton">
+                    </fieldset>
+                    
+                </form>
+            </div>
+
+            <div class="mapa" id="mapa">
+
+            </div>
+       
+    </main>
+    <script src="build/js/app.js"></script>
+</body>
+</html>

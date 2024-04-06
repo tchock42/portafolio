@@ -1,0 +1,59 @@
+@use 'variables' as v;
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+body{
+    font-family: v.$fuente_principal;
+    font-size: 1.6rem;
+    min-height: 100vh;
+}
+p {
+    font-size: 1.2rem;
+    color: v.$negro;
+} 
+.contenedor {
+    width: 95%;
+    margin: 0 auto;
+}
+a {
+    text-decoration: none;
+}
+
+h1{
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: v.$gris;
+}
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: v.$gris;
+    margin:0;
+}
+h3{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: v.$gris;
+    margin: 0;
+}
+h4{
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: v.$gris;
+    margin:0;
+}
+img, picture{
+    width: 100%;    //abarca solo el espacio disponible al 100%
+    display: block;
+}
+a{
+    margin:0;
+    width: fit-content;
+    height: fit-content;
+}

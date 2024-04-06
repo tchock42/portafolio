@@ -1,0 +1,157 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.project{
+    margin-bottom: 4rem;
+    @include m.desktop {
+        display: flex;
+        flex-direction: row;
+        gap:2rem;
+    }
+    .project-image{                     //contenedor de la imagen
+        flex: 1;
+        width: 100%;
+        height: 15rem;
+        background-color: v.$grisOscuro;
+        position: relative;
+        overflow: hidden;
+        border-radius: 1rem;
+        @include m.tablet {
+            height: 25rem;
+            width: 100%;
+            // max-width: 120rem;
+        }
+        @include m.desktop {            //pasa a una fila
+            height: 18rem;
+            width: 50%;
+            // max-width: 90rem;
+        }
+        @include m.desktop-xl {
+            height: 25rem;
+            width: 100%;
+        }
+    }
+    .project-image-preview{
+        max-width: 80%;
+        position: absolute;
+        right: -10px;
+        bottom:-10px;
+        transition: transform 0.3s ease;
+        &:hover{
+            transform: translate(-10px, -10px);
+        }
+    }
+
+    .project-information{
+        flex:1;
+        h2{
+            margin:1rem 0;
+            @include m.desktop {
+                margin-left: 3rem;  
+            }
+        }
+        p{
+            font-size: 1.6rem;
+            
+            @include m.desktop {
+                margin-left: 3rem;  
+            }
+        }
+        .project-icons{
+            display: flex;
+            flex-wrap: wrap;
+        
+            .skills-icon{
+                width: 4rem;
+                margin: 1rem 2rem;  
+                transition: transform .3s ease;
+                display: block;
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .project-links{
+            display: flex;
+            flex-direction: row;
+            align-items:center;
+            justify-content:flex-start;
+            @include m.desktop {
+                margin-top: 2rem;
+            }
+            
+            .project-github{
+                width: 4rem;
+                margin: 2rem 2rem 2rem 2rem;         //centrar elemento
+                display:block;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            .project-button{
+                @include m.boton(v.$grisClaro);
+                display:flex;
+                align-items: center;
+            }
+        }
+    }
+}
+
+.projects-list-widgets{
+    margin-bottom:4rem;
+    .projects-list-static-main{
+        a{
+            width: 100%;
+        }
+        @include m.desktop {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap:1rem;
+        }        
+        .static{
+            background-color: v.$blanco;
+            border: 1px solid v.$platino;
+            border-radius: 1rem;
+            padding: 1rem;
+            margin-bottom:2rem;
+            transition: transform .3s ease, border .5s ease;
+            
+            &:hover{
+                transform: translateY(-4px);
+                border: 1px solid v.$grisOscuro;
+                cursor: pointer;
+                box-shadow: v.$grisOscuro 0 10px 20px -10px;
+                box-sizing: border-box;
+            }
+
+            .static-heading{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                
+                img{
+                    width: 3rem;
+                }
+            }
+            p{
+                font-size: 1.6rem;
+            }
+            .project-icons{
+                display: flex;
+            
+                .skills-icon{
+                    width: 4rem;
+                    margin: 1rem 2rem;  
+                    transition: transform .3s ease;
+                    display: block;
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+                }
+            } 
+        }
+    }
+    
+    
+}

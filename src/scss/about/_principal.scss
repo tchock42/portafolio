@@ -1,0 +1,157 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.contenido{
+
+    width: 90%;
+    // max-width: 170rem;
+    margin: 0 auto;
+    padding-top: 3rem;
+    @include m.desktop {
+        margin: 0 auto;
+        width: 80%;
+    }
+    @include m.tablet {
+        margin:0 auto;
+        width: 62%;
+        
+    }
+   
+}
+.barra{
+    margin:0 auto;
+    text-align: center;
+
+    @include m.desktop{
+        display: flex;
+        flex-direction: row;
+        position: relative;
+    }
+        .buttons{
+            margin-top: 2rem;
+            display: flex;
+            justify-content: space-around;
+            
+            @include m.desktop {
+                position: absolute;
+                top: 0;
+                right: 0; 
+            }
+            
+            .boton-claro{
+                @include m.boton(v.$azulClaro);
+            }
+            .boton-oscuro{
+                @include m.desktop {
+                    margin-left: 2rem;
+                }
+                @include m.boton(v.$azulOscuro)
+            }
+            
+        }
+    
+    
+}
+
+.informacion{
+    margin: 0 auto;
+    
+    @include m.desktop {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.education{
+    margin-top: 4rem;
+    @include m.desktop {
+        flex: 50%;
+    }
+
+    .education-entry{
+        margin-top: 2rem;
+        background-color: lighten(v.$azulPrimario, 28%);
+        border-radius: .5rem;
+        padding-bottom: 1rem;
+
+        .education-entry-institution{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0 1rem;
+        }
+
+        .education-entry-degree{
+            margin: 1rem 1rem;
+            background-color: v.$blanco;
+            border-radius: .5rem;
+            padding: 1rem
+        }
+    }
+
+}
+
+.skills{
+    margin-top: 4rem;
+    @include m.desktop {
+        flex: 50%;
+    }
+    h3{
+        @include m.tablet {
+            margin-left:2rem;
+        }
+        
+    }
+    .skills-icons{
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        @include m.desktop {
+            display:grid;
+            width: 100%;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @include m.tablet {
+            display:grid;
+            width: 100%;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    .skills-type{
+        text-align: center;
+        margin-top: 2rem;
+    }
+    
+    /*agregar texto con hover*/
+    .skills-icon{
+        position: relative;
+        display: inline-block;
+    }
+    .tooltiptext{
+        visibility: hidden;
+        background-color: v.$negro;
+        color: v.$blanco;
+        width: 120px;
+        text-align: center;
+        border-radius: 6px;
+        padding: 3px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -60px;
+    }
+    .skills-icon:hover .tooltiptext{
+        visibility: visible;
+    }
+    picture{
+        width: 6rem;
+        margin: 2rem auto;         //centrar elemento
+        transition: transform .3s ease;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}

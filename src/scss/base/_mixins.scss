@@ -1,0 +1,81 @@
+@use 'base/variables' as v;
+
+@mixin telefono {
+    @media (min-width: 480px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+  
+@mixin desktop {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+@mixin desktop-xl {
+    @media (min-width: 1458px) {
+        @content;
+    }
+}
+@mixin grid($columnas, $espaciado ) {
+    display: grid;
+    gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+}
+@mixin boton($bgColor){
+    background-color: $bgColor;
+    border-radius: 999px;
+    box-shadow: v.$azulClaro 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+    transition: background-color 0.3s ease;
+    height: 4rem;
+    &:hover{
+        background-color: darken($bgColor, 10%);
+    }
+}
+@mixin boton-social($bgColor){
+    background-color: v.$blanco;
+    border-radius: .5rem;
+    // box-shadow: v.$azulClaro 0 10px 20px -10px;
+    // box-sizing: border-box;
+    color: $bgColor;
+    cursor: pointer;
+    font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 2px solid v.$platino;
+    transition: border 0.3s ease;
+    height: 4rem;
+    &:hover{
+        border: 2px solid darken(v.$platino, 20);
+    }
+}
