@@ -54,7 +54,7 @@ function mostrarModal(){
                         <p>Freelance</p>
                         <h4>Available</h4>
                     </div>
-                    <a href="https://drive.google.com/file/d/1dSi9DFCx3KqlcKHK03mfzFkdx1Wv0vkl/view?usp=drive_link" target="_blank"><button class="modal-boton">See CV<span></span></button></a>
+                    <a href="https://drive.google.com/file/d/1dSi9DFCx3KqlcKHK03mfzFkdx1Wv0vkl/view" target="_blank"><button class="modal-boton">See CV<span></span></button></a>
                 </div>
                 
             `;
@@ -65,24 +65,28 @@ function mostrarModal(){
             overlay.addEventListener('click', () => {
                 overlay.style.display = 'none';
                 modal.style.display = 'none';
+                overlay.remove();
+                modal.remove();
             })
         });
     })
 }
 function mapa(){
-    const lat = 19.43271;
-    const lng = -99.133386;
-    const zoom = 16;
-    const map = L.map('mapa').setView([lat, lng], zoom);
+    if(document.querySelector('#mapa')){
+        const lat = 19.43271;
+        const lng = -99.133386;
+        const zoom = 16;
+        const map = L.map('mapa').setView([lat, lng], zoom);
 
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-    L.marker([lat, lng]).addTo(map)
-        .bindPopup(`
-            <h2 class = "mapa__heading">Jacob Gómez Carrillo</h2>
-            <p class = "mapa__texto">Web Developer</p>
-        `)
-        .openPopup();
+        L.marker([lat, lng]).addTo(map)
+            .bindPopup(`
+                <h2 class = "mapa__heading">Jacob Gómez Carrillo</h2>
+                <p class = "mapa__texto">Web Developer</p>
+            `)
+            .openPopup();
+    }
 }
