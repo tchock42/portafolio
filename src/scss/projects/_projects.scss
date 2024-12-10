@@ -11,7 +11,8 @@
     .project-image{                     //contenedor de la imagen
         flex: 1;
         width: 100%;
-        height: 15rem;
+        // height: 20rem;
+        aspect-ratio: 2/1;
         background-color: v.$grisOscuro;
         position: relative;
         overflow: hidden;
@@ -22,7 +23,7 @@
             // max-width: 120rem;
         }
         @include m.desktop {            //pasa a una fila
-            height: 18rem;
+            height: 20rem;
             width: 50%;
             // max-width: 90rem;
         }
@@ -32,7 +33,7 @@
         }
     }
     .project-image-preview{
-        max-width: 80%;
+        max-width: 82%;
         position: absolute;
         right: -10px;
         bottom:-10px;
@@ -98,6 +99,11 @@
     }
 }
 
+@media (min-width: 768px){
+    .projects-list-main{
+        padding: 2rem;
+    }
+}
 .projects-list-widgets{
     margin-bottom:4rem;
     .projects-list-static-main{

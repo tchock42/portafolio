@@ -23,43 +23,50 @@ function mostrarModal(){
 
     iconos.forEach(icono => {
         icono.addEventListener('click', function(){
-            //creacion del overlay
-            const overlay = document.createElement('DIV');
-            overlay.classList.add('overlay');
-            const body = document.querySelector('body');
-            body.appendChild(overlay);
-            //creacion del modal
-            const modal = document.createElement('DIV')
-            modal.innerHTML = `
-                <div class="modal-encabezado">
+            var existeOverlay = document.querySelector('.overlay');
+            var overlay;
+            var modal;
+            
+            if(!existeOverlay){
+                //creacion del overlay
+                overlay = document.createElement('DIV');
+                overlay.classList.add('overlay');
+                const body = document.querySelector('body');
+                body.appendChild(overlay);
+                //creacion del modal
+                modal = document.createElement('DIV')
+                modal.innerHTML = `
+                    <div class="modal-encabezado">
 
-                    <picture>
-                        <source srcset="build/img/avatar-2092113_640.avif" type="image/avif">
-                        <source srcset="build/img/avatar-2092113_640.webp" type="image/webp">
-                        <img src="build/img/avatar-2092113_640.png" alt="avatar">
-                    </picture>
+                        <picture>
+                            <source srcset="build/img/avatar-2092113_640.avif" type="image/avif">
+                            <source srcset="build/img/avatar-2092113_640.webp" type="image/webp">
+                            <img src="build/img/avatar-2092113_640.png" alt="avatar">
+                        </picture>
+                        
+                        <div class="modal-heading">
+                            <h3>Jacob Gómez Carrillo</h3>
+                            <p>Mechatronics Engineer</p>
+                            <p>Nezahualcóyotl, México, México</p>
+                        </div>
+                    </div>
+                    <p>My name is Jacob, I am an engineer that has many faces, one of them related to software 
+                    development. I have studied for years MEAR technologies and now I want to explore my frontend
+                    and backend knowledge in the industry</p>
                     
-                    <div class="modal-heading">
-                        <h3>Jacob Gómez Carrillo</h3>
-                        <p>Mechatronics Engineer</p>
-                        <p>Nezahualcóyotl, México, México</p>
+                    <div class="modal-botones">
+                        <div class="available">
+                            <p>Freelance</p>
+                            <h4>Available</h4>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1dSi9DFCx3KqlcKHK03mfzFkdx1Wv0vkl/view" target="_blank"><button class="modal-boton">See CV<span></span></button></a>
                     </div>
-                </div>
-                <p>My name is Jacob, I am an engineer that has many faces, one of them related to software 
-                development. I have studied for years MEAR technologies and now I want to explore my frontend
-                and backend knowledge in the industry</p>
-                
-                <div class="modal-botones">
-                    <div class="available">
-                        <p>Freelance</p>
-                        <h4>Available</h4>
-                    </div>
-                    <a href="https://drive.google.com/file/d/1dSi9DFCx3KqlcKHK03mfzFkdx1Wv0vkl/view" target="_blank"><button class="modal-boton">See CV<span></span></button></a>
-                </div>
-                
-            `;
-            modal.classList.add('modal');
-            body.appendChild(modal);
+                    
+                `;
+                modal.classList.add('modal');
+                body.appendChild(modal);
+            }
+            
             
             //cerrar modal
             overlay.addEventListener('click', () => {

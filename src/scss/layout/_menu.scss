@@ -5,7 +5,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
     padding: 1rem 2rem;
+    z-index: 4;
     background: rgb(2,0,36);
     background: linear-gradient(265deg, rgba(2,0,36,1) 0%, rgba(95,201,243,0.4682247899159664) 0%, rgba(0,212,255,1) 100%);
 
@@ -32,10 +35,13 @@
         display: block;   
     }
     background: rgb(2,0,36);
-    background: linear-gradient(265deg, rgba(2,0,36,1) 0%, rgba(95,201,243,0.4682247899159664) 0%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(265deg, rgba(2,0,36,1) 0%, rgba(95,201,243,0.4682247899159664) 0%, rgba(0,212,255,1) 10%);
     min-width: 300px;
     &.mostrar{
         display: block;
+        position: sticky;
+        top: 0;
+        z-index: 3;
     }
     
     .avatar{
@@ -54,10 +60,12 @@
         color: v.$azulSecundario;
     }
 }
-.contenedor{
+.menu-contenedor{
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: sticky;
+    top: 0;
     h1{
         margin-bottom: 1rem;
     }
